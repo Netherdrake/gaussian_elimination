@@ -1,6 +1,6 @@
 (defproject gaussian.elimination "1.0.0"
   :description "Gaussian Elimination Implementation"
-  :dependencies [[org.clojure/clojure "1.2.1"]
-                 [org.clojure/clojure-contrib "1.2.0"]]
+  :dependencies [[org.clojure/clojure "1.7.0"]
+                 [org.clojure/math.numeric-tower "0.0.4"]]
   :dev-dependencies [[speclj "1.4.0"]]
   :test-path "spec/")

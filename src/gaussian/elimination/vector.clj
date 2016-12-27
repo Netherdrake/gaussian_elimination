@@ -1,10 +1,10 @@
 (ns gaussian.elimination.vector
   "vector manipulation library.
   some ideas taken from mark reid's minilight in clojure"
-  (:require [clojure.contrib.generic.math-functions :as math])
+  (:require [clojure.math.numeric-tower :as math])
   )
 
-(defn dot-product [frst sec] 
+(defn dot-product [frst sec]
   (reduce + (map * frst sec)))
 
 (defn scale-vector [v f]

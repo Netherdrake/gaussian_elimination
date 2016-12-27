@@ -1,7 +1,7 @@
 (ns gaussian.elimination.gaussian
   (use [gaussian.elimination.matrix])
   (use [gaussian.elimination.vector])
-  (use [clojure.contrib.math]))
+  (use [clojure.math.numeric-tower]))
 (declare pivot triangulate back-substitute)
 
 (defn gaussian-elimination [m evaluations]
@@ -28,7 +28,7 @@
         matrix (build-matrix degree x-vals)
         ]
     (gaussian-elimination matrix evaluations)))
-        
+
 
 (defn eliminate-cell [pivot to-trim column]
   (let [pivot-elt (nth pivot column)
@@ -36,7 +36,7 @@
         scaling-factor (/ to-trim-elt pivot-elt)
         scaled (scale-vector pivot scaling-factor)
         with-column-eliminated (subtract-vectors to-trim scaled)
-        with-zero-enforced (assoc 
+        with-zero-enforced (assoc
                              (vec with-column-eliminated)
                              column
                              0)]
@@ -109,8 +109,8 @@
       coefficients
       basis)))
 
-(defn iterate-back-substitution 
-  [truncated-matrix 
+(defn iterate-back-substitution
+  [truncated-matrix
    truncated-evaluations
    answers-so-far
    idx-of-unknown]
@@ -140,4 +140,3 @@
        truncated-evaluations
        answers-so-far
        idx-of-unknown))))
-
