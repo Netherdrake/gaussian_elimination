@@ -1,4 +1,4 @@
-(ns gaussian.elimination.vector
+(ns ge.vector
   "vector manipulation library.
   some ideas taken from mark reid's minilight in clojure"
   (:require [clojure.math.numeric-tower :as math])

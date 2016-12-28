@@ -1,7 +1,7 @@
-(ns gaussian.elimination.gaussian_spec
-  (:use [gaussian.elimination.gaussian]
-        [gaussian.elimination.matrix]
-        [gaussian.elimination.vector]
+(ns ge.gaussian_spec
+  (:use [ge.gaussian]
+        [ge.matrix]
+        [ge.vector]
         [speclj.core]))
 
 
@@ -44,7 +44,7 @@
           other (second @matrix)
           col-idx 0]
       (should= [0 0.5 0.5] (eliminate-cell pivot other col-idx))))
-  
+
   (it "kills one column correctly"
     (let [col-idx 0
           pivot-row-idx 0
@@ -54,7 +54,7 @@
           after-two-iters [[2 1 -1]
                            [0 0.5 0.5]
                            [0 0 -1]]]
-                           
+
 
       (should= after-one-iter (eliminate-col @matrix col-idx pivot-row-idx))
       (should= after-two-iters (eliminate-col after-one-iter (inc col-idx) (inc pivot-row-idx)))))
@@ -77,4 +77,3 @@
       (should= answers (back-substitute m evaluations)))))
 
 (run-specs)
-

@@ -1,5 +1,5 @@
-(ns gaussian.elimination.matrix_spec
-  (use [gaussian.elimination.matrix]
+(ns ge.matrix_spec
+  (use [ge.matrix]
        [speclj.core]))
 (describe "matrix stuff"
   (with cur-matrix [[64 8 1]

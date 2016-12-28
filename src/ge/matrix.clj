@@ -1,5 +1,5 @@
-(ns gaussian.elimination.matrix
-  (use [gaussian.elimination.vector]))
+(ns ge.matrix
+  (use [ge.vector]))
 
 (defn swap [m top bottom]
   (let [casted (vec m)]

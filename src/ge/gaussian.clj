@@ -1,6 +1,6 @@
-(ns gaussian.elimination.gaussian
-  (use [gaussian.elimination.matrix])
-  (use [gaussian.elimination.vector])
+(ns ge.gaussian
+  (use [ge.matrix])
+  (use [ge.vector])
   (use [clojure.math.numeric-tower]))
 (declare pivot triangulate back-substitute)
 
